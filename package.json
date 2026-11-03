@@ -1,4 +1,4 @@
- legacy-peer-deps=true{
+ {
   "name": "react-example",
   "private": true,
   "version": "0.0.0",
