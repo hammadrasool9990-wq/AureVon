@@ -85,15 +85,15 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
       {/* Section Header */}
       {!asSubSection && (
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-3">
             <span>Interactive Learning Sandbox</span>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true" className="text-neutral-600">·</span>
             <span>Performance Marketing Math</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
             Campaign Economics & Unit Metrics Simulator
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
             As part of my digital marketing studies under Sir Ahmad Basit, I built this practical
             calculator to test campaign unit economics. Test how small improvements in CTR or
             Conversion Rate impact ROAS and bottom-line profit.
@@ -101,249 +101,250 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
         </div>
       )}
 
-        {/* Presets Bar */}
-        <div className="mb-8 flex flex-wrap items-center gap-3">
-          <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-1">
-            Load Scenario:
-          </span>
-          {PRESETS.map((p) => (
-            <button
-              key={p.name}
-              type="button"
-              onClick={() => loadPreset(p)}
-              className="px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-lg transition-colors whitespace-nowrap"
-            >
-              {p.name}
-            </button>
-          ))}
+      {/* Presets Bar */}
+      <div className="mb-8 flex flex-wrap items-center gap-3">
+        <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mr-1">
+          Load Scenario:
+        </span>
+        {PRESETS.map((p) => (
           <button
+            key={p.name}
             type="button"
-            onClick={handleReset}
-            className="px-2.5 py-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors ml-auto flex items-center gap-1"
-            title="Reset to initial values"
+            onClick={() => loadPreset(p)}
+            className="px-3.5 py-1.5 text-xs font-semibold text-neutral-300 hover:text-amber-300 bg-[#101014] hover:bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)] rounded-lg transition-all active:scale-[0.97] whitespace-nowrap cursor-pointer"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset</span>
+            {p.name}
           </button>
-        </div>
+        ))}
+        <button
+          type="button"
+          onClick={handleReset}
+          className="px-2.5 py-1.5 text-xs text-neutral-500 hover:text-amber-400 transition-colors ml-auto flex items-center gap-1 cursor-pointer"
+          title="Reset to initial values"
+        >
+          <RotateCcw className="w-3.5 h-3.5" />
+          <span>Reset</span>
+        </button>
+      </div>
 
-        {/* Main Grid: Inputs on Left, Real-Time Unit Metrics on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Panel: Sliders & Controls */}
-          <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#0F172A] border border-slate-800 space-y-6">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-2">
-              <Calculator className="w-5 h-5 text-blue-400" />
-              <span>Campaign Inputs</span>
-            </h3>
+      {/* Main Grid: Inputs on Left, Real-Time Unit Metrics on Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Panel: Sliders & Controls */}
+        <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#101014] border border-neutral-800 space-y-6">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-2">
+            <Calculator className="w-5 h-5 text-amber-400" />
+            <span>Campaign Inputs</span>
+          </h3>
 
-            {/* Ad Spend */}
-            <div>
-              <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-                <label htmlFor={spendInputId} className="text-slate-300">Total Ad Spend ($)</label>
-                <span className="font-mono tabular-nums text-white font-bold">${adSpend.toLocaleString()}</span>
-              </div>
-              <input
-                id={spendInputId}
-                type="range"
-                min="200"
-                max="25000"
-                step="100"
-                value={adSpend}
-                onChange={(e) => setAdSpend(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-                <span>$200</span>
-                <span>$25,000</span>
-              </div>
+          {/* Ad Spend */}
+          <div>
+            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
+              <label htmlFor={spendInputId} className="text-neutral-300">Total Ad Spend ($)</label>
+              <span className="font-mono tabular-nums text-white font-bold">${adSpend.toLocaleString()}</span>
             </div>
-
-            {/* Impressions */}
-            <div>
-              <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-                <label htmlFor={impressionsInputId} className="text-slate-300">Audience Impressions</label>
-                <span className="font-mono tabular-nums text-white font-bold">{impressions.toLocaleString()}</span>
-              </div>
-              <input
-                id={impressionsInputId}
-                type="range"
-                min="5000"
-                max="500000"
-                step="5000"
-                value={impressions}
-                onChange={(e) => setImpressions(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-                <span>5,000</span>
-                <span>500,000</span>
-              </div>
-            </div>
-
-            {/* Click-Through Rate (CTR) */}
-            <div>
-              <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-                <label htmlFor={ctrInputId} className="text-slate-300">Click-Through Rate (CTR %)</label>
-                <span className="font-mono tabular-nums text-blue-400 font-bold">{ctr.toFixed(1)}%</span>
-              </div>
-              <input
-                id={ctrInputId}
-                type="range"
-                min="0.5"
-                max="8.0"
-                step="0.1"
-                value={ctr}
-                onChange={(e) => setCtr(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-                <span>0.5% (Conservative)</span>
-                <span>8.0% (Exceptional)</span>
-              </div>
-            </div>
-
-            {/* Conversion Rate (CVR) */}
-            <div>
-              <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-                <label htmlFor={cvrInputId} className="text-slate-300">Landing Page Conversion (CVR %)</label>
-                <span className="font-mono tabular-nums text-blue-400 font-bold">{cvr.toFixed(1)}%</span>
-              </div>
-              <input
-                id={cvrInputId}
-                type="range"
-                min="0.5"
-                max="12.0"
-                step="0.1"
-                value={cvr}
-                onChange={(e) => setCvr(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-                <span>0.5%</span>
-                <span>12.0%</span>
-              </div>
-            </div>
-
-            {/* Average Order Value / Customer Value */}
-            <div>
-              <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-                <label htmlFor={aovInputId} className="text-slate-300">Average Customer Value / AOV ($)</label>
-                <span className="font-mono tabular-nums text-white font-bold">${aov.toLocaleString()}</span>
-              </div>
-              <input
-                id={aovInputId}
-                type="range"
-                min="10"
-                max="1000"
-                step="5"
-                value={aov}
-                onChange={(e) => setAov(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-600"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 font-mono mt-1">
-                <span>$10</span>
-                <span>$1,000</span>
-              </div>
+            <input
+              id={spendInputId}
+              type="range"
+              min="200"
+              max="25000"
+              step="100"
+              value={adSpend}
+              onChange={(e) => setAdSpend(Number(e.target.value))}
+              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+            />
+            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+              <span>$200</span>
+              <span>$25,000</span>
             </div>
           </div>
 
-          {/* Right Panel: Output KPI Dashboard */}
-          <div className="lg:col-span-6 space-y-6">
-            {/* Top Scorecard: ROAS & Net Return */}
-            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0F172A] border border-blue-900/40 relative overflow-hidden">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
-                  Target Efficiency
-                </span>
-                <span className="text-xs text-slate-400">Real-Time Model</span>
-              </div>
+          {/* Impressions */}
+          <div>
+            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
+              <label htmlFor={impressionsInputId} className="text-neutral-300">Audience Impressions</label>
+              <span className="font-mono tabular-nums text-white font-bold">{impressions.toLocaleString()}</span>
+            </div>
+            <input
+              id={impressionsInputId}
+              type="range"
+              min="5000"
+              max="500000"
+              step="5000"
+              value={impressions}
+              onChange={(e) => setImpressions(Number(e.target.value))}
+              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+            />
+            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+              <span>5,000</span>
+              <span>500,000</span>
+            </div>
+          </div>
 
-              <div className="grid grid-cols-2 gap-6 mb-6">
-                <div>
-                  <div className="text-xs text-slate-400 mb-1">Return on Ad Spend (ROAS)</div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tabular-nums">
-                    {roas.toFixed(2)}x
-                  </div>
-                  <div className="text-xs text-slate-400 mt-1 font-mono">
-                    {roas >= 2.0 ? 'Profitable Scale' : roas >= 1.0 ? 'Breakeven Range' : 'Underperforming'}
-                  </div>
-                </div>
+          {/* Click-Through Rate (CTR) */}
+          <div>
+            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
+              <label htmlFor={ctrInputId} className="text-neutral-300">Click-Through Rate (CTR %)</label>
+              <span className="font-mono tabular-nums text-amber-400 font-bold">{ctr.toFixed(1)}%</span>
+            </div>
+            <input
+              id={ctrInputId}
+              type="range"
+              min="0.5"
+              max="8.0"
+              step="0.1"
+              value={ctr}
+              onChange={(e) => setCtr(Number(e.target.value))}
+              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+            />
+            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+              <span>0.5% (Conservative)</span>
+              <span>8.0% (Exceptional)</span>
+            </div>
+          </div>
 
-                <div>
-                  <div className="text-xs text-slate-400 mb-1">Net Margin / Return</div>
-                  <div
-                    className={`text-3xl sm:text-4xl font-extrabold font-mono tabular-nums ${
-                      netContribution >= 0 ? 'text-emerald-400' : 'text-rose-400'
-                    }`}
-                  >
-                    {netContribution >= 0 ? `+$${netContribution.toLocaleString()}` : `-$${Math.abs(netContribution).toLocaleString()}`}
-                  </div>
-                  <div className="text-xs text-slate-400 mt-1 font-mono">
-                    ROI: {roiPercentage.toFixed(1)}%
-                  </div>
-                </div>
-              </div>
+          {/* Conversion Rate (CVR) */}
+          <div>
+            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
+              <label htmlFor={cvrInputId} className="text-neutral-300">Landing Page Conversion (CVR %)</label>
+              <span className="font-mono tabular-nums text-amber-400 font-bold">{cvr.toFixed(1)}%</span>
+            </div>
+            <input
+              id={cvrInputId}
+              type="range"
+              min="0.5"
+              max="12.0"
+              step="0.1"
+              value={cvr}
+              onChange={(e) => setCvr(Number(e.target.value))}
+              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+            />
+            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+              <span>0.5%</span>
+              <span>12.0%</span>
+            </div>
+          </div>
 
-              <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-300 leading-relaxed">
-                <strong className="text-white">Marketing Principle:</strong> In performance
-                marketing, ad spend is only effective when unit margins cover Cost Per Acquisition
-                (CPA) while maintaining positive customer lifetime value (LTV).
-              </div>
+          {/* Average Order Value / Customer Value */}
+          <div>
+            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
+              <label htmlFor={aovInputId} className="text-neutral-300">Average Customer Value / AOV ($)</label>
+              <span className="font-mono tabular-nums text-white font-bold">${aov.toLocaleString()}</span>
+            </div>
+            <input
+              id={aovInputId}
+              type="range"
+              min="10"
+              max="1000"
+              step="5"
+              value={aov}
+              onChange={(e) => setAov(Number(e.target.value))}
+              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+            />
+            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+              <span>$10</span>
+              <span>$1,000</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Panel: Output KPI Dashboard */}
+        <div className="lg:col-span-6 space-y-6">
+          {/* Top Scorecard: ROAS & Net Return */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#18181F] via-[#101014] to-black border border-amber-500/35 relative overflow-hidden shadow-[0_0_35px_rgba(245,158,11,0.12)]">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                Target Efficiency
+              </span>
+              <span className="text-xs text-neutral-400 font-mono">Real-Time Model</span>
             </div>
 
-            {/* Granular Unit Metrics Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800">
-                <div className="text-[11px] font-medium text-slate-400 mb-1">Estimated Clicks</div>
-                <div className="text-xl font-bold text-white font-mono tabular-nums">
-                  {clicks.toLocaleString()}
-                </div>
-                <div className="text-[11px] text-slate-500 mt-0.5 font-mono">Traffic volume</div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800">
-                <div className="text-[11px] font-medium text-slate-400 mb-1">Cost Per Click (CPC)</div>
-                <div className="text-xl font-bold text-white font-mono tabular-nums">
-                  ${cpc.toFixed(2)}
-                </div>
-                <div className="text-[11px] text-slate-500 mt-0.5 font-mono">Per visitor</div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800">
-                <div className="text-[11px] font-medium text-slate-400 mb-1">Conversions</div>
-                <div className="text-xl font-bold text-blue-400 font-mono tabular-nums">
-                  {conversions.toLocaleString()}
-                </div>
-                <div className="text-[11px] text-slate-500 mt-0.5 font-mono">Leads / sales</div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800">
-                <div className="text-[11px] font-medium text-slate-400 mb-1">Cost Per Acq (CPA)</div>
-                <div className="text-xl font-bold text-white font-mono tabular-nums">
-                  ${cpa.toFixed(2)}
-                </div>
-                <div className="text-[11px] text-slate-500 mt-0.5 font-mono">Per acquisition</div>
-              </div>
-            </div>
-
-            {/* Gross Pipeline Revenue */}
-            <div className="p-5 rounded-xl bg-[#0F172A] border border-slate-800 flex items-center justify-between">
+            <div className="grid grid-cols-2 gap-6 mb-6">
               <div>
-                <div className="text-xs text-slate-400 font-medium">Estimated Gross Pipeline / Revenue</div>
-                <div className="text-2xl font-bold text-white font-mono tabular-nums mt-0.5">
-                  ${grossRevenue.toLocaleString()}
+                <div className="text-xs text-neutral-400 mb-1">Return on Ad Spend (ROAS)</div>
+                <div className="text-3xl sm:text-4xl font-extrabold text-amber-300 font-mono tabular-nums">
+                  {roas.toFixed(2)}x
+                </div>
+                <div className="text-xs text-neutral-400 mt-1 font-mono">
+                  {roas >= 2.0 ? 'Profitable Scale' : roas >= 1.0 ? 'Breakeven Range' : 'Underperforming'}
                 </div>
               </div>
-              <a
-                href="#contact"
-                className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors inline-flex items-center gap-1.5"
-              >
-                <span>Discuss Campaign Math</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+
+              <div>
+                <div className="text-xs text-neutral-400 mb-1">Net Margin / Return</div>
+                <div
+                  className={`text-3xl sm:text-4xl font-extrabold font-mono tabular-nums ${
+                    netContribution >= 0 ? 'text-amber-400' : 'text-red-500'
+                  }`}
+                >
+                  {netContribution >= 0 ? `+$${netContribution.toLocaleString()}` : `-$${Math.abs(netContribution).toLocaleString()}`}
+                </div>
+                <div className="text-xs text-neutral-400 mt-1 font-mono">
+                  ROI: {roiPercentage.toFixed(1)}%
+                </div>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-black/80 border border-neutral-800 text-xs text-neutral-300 leading-relaxed">
+              <strong className="text-amber-300">Marketing Principle:</strong> In performance
+              marketing, ad spend is only effective when unit margins cover Cost Per Acquisition
+              (CPA) while maintaining positive customer lifetime value (LTV).
             </div>
           </div>
+
+          {/* Granular Unit Metrics Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
+              <div className="text-[11px] font-medium text-neutral-400 mb-1">Estimated Clicks</div>
+              <div className="text-xl font-bold text-white font-mono tabular-nums">
+                {clicks.toLocaleString()}
+              </div>
+              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Traffic volume</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
+              <div className="text-[11px] font-medium text-neutral-400 mb-1">Cost Per Click (CPC)</div>
+              <div className="text-xl font-bold text-white font-mono tabular-nums">
+                ${cpc.toFixed(2)}
+              </div>
+              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Per visitor</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
+              <div className="text-[11px] font-medium text-neutral-400 mb-1">Conversions</div>
+              <div className="text-xl font-bold text-amber-400 font-mono tabular-nums">
+                {conversions.toLocaleString()}
+              </div>
+              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Leads / sales</div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
+              <div className="text-[11px] font-medium text-neutral-400 mb-1">Cost Per Acq (CPA)</div>
+              <div className="text-xl font-bold text-white font-mono tabular-nums">
+                ${cpa.toFixed(2)}
+              </div>
+              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Per acquisition</div>
+            </div>
+          </div>
+
+          {/* Gross Pipeline Revenue */}
+          <div className="p-5 rounded-xl bg-[#101014] border border-neutral-800 flex items-center justify-between">
+            <div>
+              <div className="text-xs text-neutral-400 font-medium">Estimated Gross Pipeline / Revenue</div>
+              <div className="text-2xl font-bold text-white font-mono tabular-nums mt-0.5">
+                ${grossRevenue.toLocaleString()}
+              </div>
+            </div>
+            <a
+              href="#contact"
+              className="px-4 py-2 text-xs font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-md shadow-red-950/50"
+            >
+              <span>Discuss Campaign Math</span>
+              <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
+            </a>
+          </div>
         </div>
+      </div>
     </div>
   );
 
@@ -352,7 +353,7 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
   }
 
   return (
-    <section id="calculator" className="py-24 bg-[#0B1220] border-t border-slate-900 relative">
+    <section id="calculator" className="py-24 bg-[#08080A] border-t border-neutral-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {content}
       </div>

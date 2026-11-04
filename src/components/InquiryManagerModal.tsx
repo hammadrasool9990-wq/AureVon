@@ -94,12 +94,12 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-3xl bg-[#0F172A] border border-slate-800 rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+      <div className="relative w-full max-w-3xl bg-[#0E0E12] border border-neutral-800 rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
         {/* Modal Header */}
-        <div className="p-6 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-6 border-b border-neutral-800 flex items-center justify-between">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+            <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
               Inquiry Records & Leads
             </div>
             <h3 className="text-xl font-bold text-white mt-1">
@@ -109,16 +109,16 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+            className="p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-neutral-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Action bar */}
-        <div className="px-6 py-3 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="text-slate-400">
-            Messages submitted via the contact form for <span className="text-slate-200">HAMMAD RASOOL</span>
+        <div className="px-6 py-3 bg-black border-b border-neutral-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="text-neutral-400">
+            Messages submitted via the contact form for <span className="text-white font-semibold">HAMMAD RASOOL</span>
           </div>
           <div className="flex items-center gap-2">
             {inquiries.length > 0 && (
@@ -126,15 +126,15 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                 <button
                   type="button"
                   onClick={handleExportCSV}
-                  className="px-3 py-1.5 text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-md transition-colors flex items-center gap-1.5"
+                  className="px-3 py-1.5 text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-md transition-colors flex items-center gap-1.5"
                 >
-                  <Download className="w-3.5 h-3.5" />
+                  <Download className="w-3.5 h-3.5 text-amber-400" />
                   <span>Export CSV</span>
                 </button>
                 <button
                   type="button"
                   onClick={handleClearAll}
-                  className="px-3 py-1.5 text-rose-400 hover:text-rose-300 bg-rose-950/40 hover:bg-rose-950/60 border border-rose-900/40 rounded-md transition-colors flex items-center gap-1.5"
+                  className="px-3 py-1.5 text-red-400 hover:text-red-300 bg-red-950/30 hover:bg-red-950/60 border border-red-900/40 rounded-md transition-colors flex items-center gap-1.5"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                   <span>Clear All</span>
@@ -144,7 +144,7 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
             <button
               type="button"
               onClick={handleAddSample}
-              className="px-3 py-1.5 text-blue-400 hover:text-blue-300 bg-blue-950/40 hover:bg-blue-950/60 border border-blue-900/40 rounded-md transition-colors"
+              className="px-3 py-1.5 text-amber-300 hover:text-white bg-amber-950/40 hover:bg-amber-950/70 border border-amber-900/40 rounded-md transition-colors font-semibold"
             >
               + Add Test Inquiry
             </button>
@@ -155,11 +155,11 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
         <div className="p-6 overflow-y-auto space-y-4 flex-1">
           {inquiries.length === 0 ? (
             <div className="py-12 text-center space-y-3">
-              <MessageSquare className="w-12 h-12 text-slate-600 mx-auto" />
-              <div className="text-base font-semibold text-slate-300">
+              <MessageSquare className="w-12 h-12 text-neutral-600 mx-auto" />
+              <div className="text-base font-semibold text-neutral-300">
                 No inquiries submitted yet
               </div>
-              <p className="text-xs text-slate-500 max-w-sm mx-auto">
+              <p className="text-xs text-neutral-500 max-w-sm mx-auto">
                 Fill out the contact form on the home page or click "+ Add Test Inquiry" to test how
                 messages appear.
               </p>
@@ -168,40 +168,40 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
             inquiries.map((inquiry) => (
               <div
                 key={inquiry.id}
-                className="p-5 rounded-xl bg-slate-900 border border-slate-800 space-y-3 hover:border-slate-700 transition-colors"
+                className="p-5 rounded-xl bg-black border border-neutral-800 space-y-3 hover:border-amber-500/40 transition-colors"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-800/80">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-neutral-800">
                   <div>
-                    <span className="font-mono text-xs text-blue-400 font-bold mr-2">
+                    <span className="font-mono text-xs text-amber-400 font-bold mr-2">
                       {inquiry.id}
                     </span>
                     <span className="text-sm font-bold text-white">{inquiry.fullName}</span>
                     {inquiry.companyName && (
-                      <span className="text-xs text-slate-400 ml-2">
+                      <span className="text-xs text-neutral-400 ml-2">
                         ({inquiry.companyName})
                       </span>
                     )}
                   </div>
-                  <div className="text-[11px] text-slate-500 font-mono">
+                  <div className="text-[11px] text-neutral-500 font-mono">
                     {new Date(inquiry.createdAt).toLocaleString()}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
                   <div>
-                    <span className="text-slate-500">Contact Number: </span>
+                    <span className="text-neutral-500">Contact Number: </span>
                     <a
                       href={`tel:${inquiry.phone}`}
-                      className="text-emerald-400 font-mono font-bold hover:underline"
+                      className="text-amber-400 font-mono font-bold hover:underline"
                     >
                       {inquiry.phone}
                     </a>
                   </div>
                   <div>
-                    <span className="text-slate-500">Email: </span>
+                    <span className="text-neutral-500">Email: </span>
                     <a
                       href={`mailto:${inquiry.email}`}
-                      className="text-blue-400 hover:underline"
+                      className="text-white hover:text-amber-300 hover:underline font-mono"
                     >
                       {inquiry.email}
                     </a>
@@ -209,7 +209,7 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                 </div>
 
                 {inquiry.message && (
-                  <div className="p-3 rounded-lg bg-slate-950 text-xs text-slate-300 leading-relaxed font-sans">
+                  <div className="p-3 rounded-lg bg-[#141418] text-xs text-neutral-300 leading-relaxed font-sans border border-neutral-850">
                     "{inquiry.message}"
                   </div>
                 )}
@@ -218,12 +218,12 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                   <button
                     type="button"
                     onClick={() => handleCopyInquiry(inquiry)}
-                    className="px-2.5 py-1 text-[11px] text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded transition-colors inline-flex items-center gap-1"
+                    className="px-2.5 py-1 text-[11px] text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 rounded transition-colors inline-flex items-center gap-1 border border-neutral-800"
                   >
                     {copiedId === inquiry.id ? (
                       <>
-                        <Check className="w-3 h-3 text-emerald-400" />
-                        <span className="text-emerald-400">Copied!</span>
+                        <Check className="w-3 h-3 text-amber-400" />
+                        <span className="text-amber-400">Copied!</span>
                       </>
                     ) : (
                       <>
@@ -236,9 +236,9 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                     href={`mailto:${inquiry.email}?subject=${encodeURIComponent(
                       `Re: Your inquiry for HAMMAD RASOOL`
                     )}`}
-                    className="px-2.5 py-1 text-[11px] font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded transition-colors inline-flex items-center gap-1"
+                    className="px-2.5 py-1 text-[11px] font-bold text-white bg-red-600 hover:bg-red-700 rounded transition-colors inline-flex items-center gap-1 shadow-sm"
                   >
-                    <Mail className="w-3 h-3" />
+                    <Mail className="w-3 h-3 text-amber-300" />
                     <span>Reply via Email</span>
                   </a>
                 </div>
@@ -248,11 +248,11 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-slate-900 border-t border-slate-800 flex justify-end">
+        <div className="p-4 bg-black border-t border-neutral-800 flex justify-end">
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
+            className="px-5 py-2 text-xs font-semibold text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-colors"
           >
             Close
           </button>

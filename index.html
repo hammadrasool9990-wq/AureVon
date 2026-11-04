@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="yg92kyRLdx3XxZRGgAN9cpInZdLN0SU3UmNyweG7fSY" />
+    <meta name="theme-color" content="#08080A" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       (function() {
@@ -61,13 +62,12 @@
       content="Exploring digital marketing, performance strategies, and web development. Based in Gulberg, Lahore. Mentored by Sir Ahmad Basit at NeXskill."
     />
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Typography: Candara with high-legibility system fallbacks -->
+    <style>
+      :root {
+        font-family: 'Candara', 'Candara Light', 'Calibri', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      }
+    </style>
 
     <!-- JSON-LD Structured Data: Person & WebSite -->
     <script type="application/ld+json">
@@ -129,7 +129,7 @@
     }
     </script>
   </head>
-  <body class="bg-[#0B1220] text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
+  <body class="bg-[#08080A] text-white font-sans antialiased selection:bg-red-600 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

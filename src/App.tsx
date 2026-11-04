@@ -7,6 +7,8 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VercelGuideModal } from './components/VercelGuideModal';
 import { InquiryManagerModal } from './components/InquiryManagerModal';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
+import { AmbientCursorGlow } from './components/AmbientCursorGlow';
 import { ContactSubmission } from './types';
 
 export default function App() {
@@ -33,7 +35,11 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0B1220] text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[#08080A] text-white flex flex-col font-sans selection:bg-red-600 selection:text-white relative">
+      {/* Advanced Global Visual Effects: Scroll Progress & Ambient Cursor Glow */}
+      <ScrollProgressBar />
+      <AmbientCursorGlow />
+
       {/* Top Navigation */}
       <Navbar
         onOpenVercelGuide={() => setIsVercelGuideOpen(true)}

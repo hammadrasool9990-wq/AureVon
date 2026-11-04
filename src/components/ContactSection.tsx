@@ -163,38 +163,38 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
   const mailtoUrl = `mailto:AureVon9990@gmail.com?cc=hammadrasool9990@gmail.com&subject=${mailtoSubject}&body=${mailtoBody}`;
 
   return (
-    <section id="contact" className="py-24 bg-slate-950/80 border-t border-slate-900 relative">
+    <section id="contact" className="py-24 bg-[#08080A] border-t border-neutral-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Context & Contact Info */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-3">
                 <span>Fast & Simple Contact</span>
-                <span aria-hidden="true">·</span>
+                <span aria-hidden="true" className="text-neutral-600">·</span>
                 <span>Name, Email & Phone Only</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
                 Have a Business Idea? Let's Connect.
               </h2>
-              <p className="text-base text-slate-300 leading-relaxed mb-8">
+              <p className="text-base text-neutral-300 leading-relaxed mb-8">
                 Leave your name, email, and contact number below and I will get back to you promptly
                 to discuss digital marketing, web projects, or business collaborations.
               </p>
 
               {/* Direct channels */}
               <div className="space-y-4 mb-8">
-                {/* Primary Email */}
+                {/* Primary Email (Golden Accent Highlight) */}
                 <a
                   href="mailto:AureVon9990@gmail.com"
-                  className="p-4 rounded-xl bg-[#0F172A] border border-blue-900/40 hover:border-blue-500/50 transition-colors flex items-center gap-4 group"
+                  className="p-4 rounded-xl bg-[#101014] border border-amber-500/40 hover:border-amber-400 transition-colors flex items-center gap-4 group shadow-md"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:text-blue-300">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 group-hover:text-amber-300">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-blue-400 font-medium">Primary Email</div>
-                    <div className="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                    <div className="text-xs text-amber-400 font-bold uppercase tracking-wider">Primary Email</div>
+                    <div className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors font-mono">
                       AureVon9990@gmail.com
                     </div>
                   </div>
@@ -203,37 +203,37 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                 {/* Direct Personal Email */}
                 <a
                   href="mailto:hammadrasool9990@gmail.com"
-                  className="p-4 rounded-xl bg-[#0F172A] border border-slate-800 hover:border-blue-500/50 transition-colors flex items-center gap-4 group"
+                  className="p-4 rounded-xl bg-[#101014] border border-neutral-800 hover:border-amber-500/40 transition-colors flex items-center gap-4 group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:text-blue-300">
+                  <div className="w-10 h-10 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-amber-400">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Direct Email</div>
-                    <div className="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                    <div className="text-xs text-neutral-400 font-medium">Direct Email</div>
+                    <div className="text-sm font-semibold text-white group-hover:text-amber-300 transition-colors font-mono">
                       hammadrasool9990@gmail.com
                     </div>
                   </div>
                 </a>
 
-                <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-red-600/10 border border-red-500/20 flex items-center justify-center text-red-500">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Location</div>
+                    <div className="text-xs text-neutral-400 font-medium">Location</div>
                     <div className="text-sm font-semibold text-white">
                       Gulberg, Lahore, Pakistan
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#0F172A] border border-slate-800 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Response Commitment</div>
+                    <div className="text-xs text-neutral-400 font-medium">Response Commitment</div>
                     <div className="text-sm font-semibold text-white">
                       Direct callback or email within 24 hours
                     </div>
@@ -243,8 +243,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
             </div>
 
             {/* Privacy & Anti-Spam Assurance */}
-            <div className="pt-6 border-t border-slate-800/80 flex items-center gap-3 text-xs text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+            <div className="pt-6 border-t border-neutral-800 flex items-center gap-3 text-xs text-neutral-400">
+              <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
               <span>
                 100% privacy guarantee. Your contact number is used solely to respond to your request.
               </span>
@@ -253,50 +253,50 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
           {/* Right Column: Streamlined 3-Field Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-10 rounded-2xl bg-[#0F172A] border border-slate-800 shadow-2xl relative">
+            <div className="p-6 sm:p-10 rounded-2xl bg-[#101014] border border-neutral-800 shadow-2xl relative">
               {submissionSuccess ? (
                 /* Success Confirmation State */
                 <div className="py-6 text-center space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 mx-auto flex items-center justify-center shadow-lg shadow-amber-950/30">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
 
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-1">
+                    <div className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">
                       Message Received
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
                       Thank You, {submissionSuccess.fullName}!
                     </h3>
-                    <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+                    <p className="text-sm text-neutral-300 max-w-lg mx-auto leading-relaxed">
                       I have received your contact details. I will reach out to you directly at{' '}
-                      <span className="text-blue-400 font-semibold">{submissionSuccess.phone}</span>{' '}
-                      or <span className="text-blue-400 font-semibold">{submissionSuccess.email}</span>.
+                      <span className="text-amber-400 font-semibold font-mono">{submissionSuccess.phone}</span>{' '}
+                      or <span className="text-amber-400 font-semibold font-mono">{submissionSuccess.email}</span>.
                     </p>
                   </div>
 
                   {/* Submission Summary Card */}
-                  <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs space-y-2.5 max-w-lg mx-auto">
-                    <div className="flex justify-between items-center pb-2 border-b border-slate-800">
-                      <span className="text-slate-400">Reference ID:</span>
-                      <span className="font-mono text-blue-400 font-bold">{submissionSuccess.id}</span>
+                  <div className="p-5 rounded-xl bg-black border border-neutral-800 text-left text-xs space-y-2.5 max-w-lg mx-auto">
+                    <div className="flex justify-between items-center pb-2 border-b border-neutral-800">
+                      <span className="text-neutral-400">Reference ID:</span>
+                      <span className="font-mono text-amber-400 font-bold">{submissionSuccess.id}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400">Full Name:</span>
-                      <span className="text-slate-200 font-medium">{submissionSuccess.fullName}</span>
+                      <span className="text-neutral-400">Full Name:</span>
+                      <span className="text-white font-medium">{submissionSuccess.fullName}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400">Contact Number:</span>
-                      <span className="text-emerald-400 font-mono font-bold">{submissionSuccess.phone}</span>
+                      <span className="text-neutral-400">Contact Number:</span>
+                      <span className="text-amber-400 font-mono font-bold">{submissionSuccess.phone}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400">Email:</span>
-                      <span className="text-slate-200">{submissionSuccess.email}</span>
+                      <span className="text-neutral-400">Email:</span>
+                      <span className="text-neutral-200 font-mono">{submissionSuccess.email}</span>
                     </div>
                     {submissionSuccess.message && (
-                      <div className="pt-2 border-t border-slate-800">
-                        <span className="text-slate-400 block mb-1">Note:</span>
-                        <span className="text-slate-300 italic">"{submissionSuccess.message}"</span>
+                      <div className="pt-2 border-t border-neutral-800">
+                        <span className="text-neutral-400 block mb-1">Note:</span>
+                        <span className="text-neutral-300 italic">"{submissionSuccess.message}"</span>
                       </div>
                     )}
                   </div>
@@ -305,23 +305,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
                     <a
                       href={mailtoUrl}
-                      className="w-full sm:w-auto px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+                      className="w-full sm:w-auto px-6 py-3 text-xs sm:text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] rounded-lg transition-colors inline-flex items-center justify-center gap-2 shadow-lg shadow-red-950/60"
                     >
                       <span>Also Open in Email App</span>
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 text-amber-300" />
                     </a>
 
                     <button
                       type="button"
                       onClick={handleReset}
-                      className="w-full sm:w-auto px-6 py-3 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-750 border border-slate-700 rounded-lg transition-colors"
+                      className="w-full sm:w-auto px-6 py-3 text-xs sm:text-sm font-semibold text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 rounded-lg transition-colors"
                     >
                       Send Another Message
                     </button>
                   </div>
 
                   {submissionNotice && (
-                    <div className="text-[11px] text-slate-500 font-mono pt-2">
+                    <div className="text-[11px] text-neutral-500 font-mono pt-2">
                       {submissionNotice}
                     </div>
                   )}
@@ -342,22 +342,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   />
 
                   {/* Quick Notice */}
-                  <div className="p-3.5 rounded-xl bg-blue-950/30 border border-blue-900/30 flex items-center gap-3 text-xs text-slate-300">
-                    <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                  <div className="p-3.5 rounded-xl bg-amber-950/20 border border-amber-900/40 flex items-center gap-3 text-xs text-neutral-300">
+                    <Phone className="w-4 h-4 text-amber-400 shrink-0" />
                     <span>
-                      Quick connect: simply provide your <strong className="text-white">Name</strong>, <strong className="text-white">Email</strong>, and <strong className="text-white">Contact Number</strong>.
+                      Quick connect: simply provide your <strong className="text-white">Name</strong>, <strong className="text-white">Email</strong>, and <strong className="text-amber-300">Contact Number</strong>.
                     </span>
                   </div>
 
                   {/* Field 1: Full Name (Required) */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center justify-between">
+                    <label className="text-xs font-semibold text-neutral-300 mb-1.5 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <User className="w-3.5 h-3.5 text-blue-400" />
+                        <User className="w-3.5 h-3.5 text-amber-400" />
                         <span>Your Name</span>
-                        <span className="text-rose-400">*</span>
+                        <span className="text-red-500">*</span>
                       </span>
-                      <span className="text-slate-500 text-[11px]">Required</span>
+                      <span className="text-neutral-500 text-[11px]">Required</span>
                     </label>
                     <input
                       type="text"
@@ -368,12 +368,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                         setFormData({ ...formData, fullName: e.target.value });
                         if (errors.fullName) setErrors({ ...errors, fullName: undefined });
                       }}
-                      className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
-                        errors.fullName ? 'border-rose-500' : 'border-slate-800'
+                      className={`w-full px-4 py-3 bg-black border rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition-colors ${
+                        errors.fullName ? 'border-red-500' : 'border-neutral-800'
                       }`}
                     />
                     {errors.fullName && (
-                      <p className="text-xs text-rose-400 mt-1.5 flex items-center gap-1">
+                      <p className="text-xs text-red-400 mt-1.5 flex items-center gap-1">
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>{errors.fullName}</span>
                       </p>
@@ -382,13 +382,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
                   {/* Field 2: Email Address (Required) */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center justify-between">
+                    <label className="text-xs font-semibold text-neutral-300 mb-1.5 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-blue-400" />
+                        <Mail className="w-3.5 h-3.5 text-amber-400" />
                         <span>Email Address</span>
-                        <span className="text-rose-400">*</span>
+                        <span className="text-red-500">*</span>
                       </span>
-                      <span className="text-slate-500 text-[11px]">Required</span>
+                      <span className="text-neutral-500 text-[11px]">Required</span>
                     </label>
                     <input
                       type="email"
@@ -399,12 +399,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                         setFormData({ ...formData, email: e.target.value });
                         if (errors.email) setErrors({ ...errors, email: undefined });
                       }}
-                      className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
-                        errors.email ? 'border-rose-500' : 'border-slate-800'
+                      className={`w-full px-4 py-3 bg-black border rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition-colors ${
+                        errors.email ? 'border-red-500' : 'border-neutral-800'
                       }`}
                     />
                     {errors.email && (
-                      <p className="text-xs text-rose-400 mt-1.5 flex items-center gap-1">
+                      <p className="text-xs text-red-400 mt-1.5 flex items-center gap-1">
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>{errors.email}</span>
                       </p>
@@ -413,13 +413,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
                   {/* Field 3: Contact Number (Required) */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center justify-between">
+                    <label className="text-xs font-semibold text-neutral-300 mb-1.5 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                        <Phone className="w-3.5 h-3.5 text-amber-400" />
                         <span>Contact Number / Phone</span>
-                        <span className="text-rose-400">*</span>
+                        <span className="text-red-500">*</span>
                       </span>
-                      <span className="text-emerald-400 text-[11px] font-semibold">Required</span>
+                      <span className="text-amber-400 text-[11px] font-bold">Required</span>
                     </label>
                     <input
                       type="tel"
@@ -430,12 +430,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                         setFormData({ ...formData, phone: e.target.value });
                         if (errors.phone) setErrors({ ...errors, phone: undefined });
                       }}
-                      className={`w-full px-4 py-3 bg-slate-900 border rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors ${
-                        errors.phone ? 'border-rose-500' : 'border-slate-800'
+                      className={`w-full px-4 py-3 bg-black border rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition-colors ${
+                        errors.phone ? 'border-red-500' : 'border-neutral-800'
                       }`}
                     />
                     {errors.phone && (
-                      <p className="text-xs text-rose-400 mt-1.5 flex items-center gap-1">
+                      <p className="text-xs text-red-400 mt-1.5 flex items-center gap-1">
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>{errors.phone}</span>
                       </p>
@@ -444,19 +444,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
                   {/* Field 4: Quick Note (Optional) */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center justify-between">
+                    <label className="text-xs font-semibold text-neutral-300 mb-1.5 flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <MessageSquare className="w-3.5 h-3.5 text-slate-400" />
+                        <MessageSquare className="w-3.5 h-3.5 text-neutral-400" />
                         <span>Message or Note</span>
                       </span>
-                      <span className="text-slate-500 text-[11px]">Optional</span>
+                      <span className="text-neutral-500 text-[11px]">Optional</span>
                     </label>
                     <textarea
                       rows={3}
                       placeholder="Optional brief note or topic you would like to discuss..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-y"
+                      className="w-full px-4 py-2.5 bg-black border border-neutral-800 rounded-lg text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition-colors resize-y"
                     />
                   </div>
 
@@ -465,7 +465,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 px-6 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 active:scale-[0.99] disabled:opacity-70 rounded-lg transition-all shadow-lg shadow-blue-900/40 flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-3.5 px-6 text-sm font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.99] disabled:opacity-70 rounded-lg transition-all shadow-lg shadow-red-950/60 flex items-center justify-center gap-2 cursor-pointer border border-red-500/20"
                     >
                       {isSubmitting ? (
                         <>
@@ -475,25 +475,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                       ) : (
                         <>
                           <span>Send Contact Request</span>
-                          <Send className="w-4 h-4" />
+                          <Send className="w-4 h-4 text-amber-300" />
                         </>
                       )}
                     </button>
                   </div>
 
                   {/* Direct Contact Alternative Note */}
-                  <p className="text-[11px] text-slate-500 text-center leading-normal">
+                  <p className="text-[11px] text-neutral-400 text-center leading-normal">
                     You can also email directly to{' '}
                     <a
                       href="mailto:AureVon9990@gmail.com"
-                      className="text-blue-400 hover:underline font-medium"
+                      className="text-amber-400 hover:underline font-semibold font-mono"
                     >
                       AureVon9990@gmail.com
                     </a>{' '}
                     or{' '}
                     <a
                       href="mailto:hammadrasool9990@gmail.com"
-                      className="text-blue-400 hover:underline font-medium"
+                      className="text-amber-400 hover:underline font-semibold font-mono"
                     >
                       hammadrasool9990@gmail.com
                     </a>
