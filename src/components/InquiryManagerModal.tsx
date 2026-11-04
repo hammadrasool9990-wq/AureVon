@@ -118,7 +118,7 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
         {/* Action bar */}
         <div className="px-6 py-3 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="text-slate-400">
-            Messages submitted via the contact form on <span className="text-slate-200">HAMMADRASOOL.com</span>
+            Messages submitted via the contact form for <span className="text-slate-200">HAMMAD RASOOL</span>
           </div>
           <div className="flex items-center gap-2">
             {inquiries.length > 0 && (
@@ -234,7 +234,7 @@ export const InquiryManagerModal: React.FC<InquiryManagerModalProps> = ({
                   </button>
                   <a
                     href={`mailto:${inquiry.email}?subject=${encodeURIComponent(
-                      `Re: Your inquiry on HAMMADRASOOL.com - ${inquiry.interest}`
+                      `Re: Your inquiry for HAMMAD RASOOL`
                     )}`}
                     className="px-2.5 py-1 text-[11px] font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded transition-colors inline-flex items-center gap-1"
                   >

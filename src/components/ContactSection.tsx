@@ -155,10 +155,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
   // Pre-filled mailto generator for 100% verified inbox delivery
   const mailtoSubject = encodeURIComponent(
-    `[Inquiry via HAMMADRASOOL.com] Quick Contact from ${formData.fullName}`
+    `[Inquiry for HAMMAD RASOOL] Quick Contact from ${formData.fullName}`
   );
   const mailtoBody = encodeURIComponent(
-    `Hello Hammad,\n\nI visited HAMMADRASOOL.com and would like to connect.\n\nMy Contact Details:\n- Name: ${formData.fullName}\n- Email: ${formData.email}\n- Contact Number: ${formData.phone}\n${formData.message ? `- Note: ${formData.message}\n` : ''}\nBest regards,\n${formData.fullName}`
+    `Hello Hammad,\n\nI visited your website and would like to connect.\n\nMy Contact Details:\n- Name: ${formData.fullName}\n- Email: ${formData.email}\n- Contact Number: ${formData.phone}\n${formData.message ? `- Note: ${formData.message}\n` : ''}\nBest regards,\n${formData.fullName}`
   );
   const mailtoUrl = `mailto:hammadrasool9990@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 

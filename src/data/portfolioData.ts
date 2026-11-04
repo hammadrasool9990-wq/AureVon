@@ -199,7 +199,7 @@ export const LEARNING_JOURNEY_STAGES: LearningMilestone[] = [
   {
     step: 'Active Focus',
     title: 'Connecting Code, Strategy, and Client Acquisition',
-    institution: 'HAMMADRASOOL.com & Practical Portfolio',
+    institution: 'HAMMAD RASOOL — Portfolio & Practice',
     mentorOrLead: 'Continuous Application of NeXskill Insights',
     location: 'Lahore & Global Online Collaboration',
     description:

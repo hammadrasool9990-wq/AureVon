@@ -3,8 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { SkillsSection } from './components/SkillsSection';
-import { LearningJourneySection } from './components/LearningJourneySection';
-import { CampaignEconomicsCalculator } from './components/CampaignEconomicsCalculator';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VercelGuideModal } from './components/VercelGuideModal';
@@ -43,24 +41,18 @@ export default function App() {
         inquiryCount={inquiryCount}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content: Exactly 4 Streamlined Pages */}
       <main className="flex-1">
         {/* Page 1: Home / Hero */}
         <Hero />
 
-        {/* Page 2: About Me / My Journey */}
+        {/* Page 2: About Me / My Journey & Education */}
         <AboutSection />
 
-        {/* Page 3: My Skills & Interests */}
+        {/* Page 3: Skills, Strategy & Campaign Sandbox */}
         <SkillsSection />
 
-        {/* Page 4: My Learning Journey (NeXskill, Sir Ahmad Basit, Arfa Tower) */}
-        <LearningJourneySection />
-
-        {/* Interactive Feature: Performance Marketing Campaign Economics Simulator */}
-        <CampaignEconomicsCalculator />
-
-        {/* Page 5: Contact / Work With Me */}
+        {/* Page 4: Contact & Collaboration */}
         <ContactSection onSubmissionSuccess={refreshInquiryCount} />
       </main>
 

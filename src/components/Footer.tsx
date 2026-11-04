@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({
               className="text-lg font-bold text-white hover:text-blue-400 transition-colors inline-flex items-center gap-2"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span>
-              <span>HAMMADRASOOL.com</span>
+              <span>HAMMAD RASOOL</span>
             </a>
             <p className="text-slate-300 text-xs leading-relaxed max-w-sm">
               Official personal professional brand website of Hammad Rasool. Digital marketing
@@ -58,32 +58,22 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="hover:text-white transition-colors">
-                  Home / Overview
+                  01. Home
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-white transition-colors">
-                  My Journey & Values
+                  02. About My Journey
                 </a>
               </li>
               <li>
                 <a href="#skills" className="hover:text-white transition-colors">
-                  Skills & Active Focus
-                </a>
-              </li>
-              <li>
-                <a href="#learning" className="hover:text-white transition-colors">
-                  NeXskill Learning Hub
-                </a>
-              </li>
-              <li>
-                <a href="#calculator" className="hover:text-white transition-colors">
-                  Campaign Unit Economics
+                  03. Skills & Focus
                 </a>
               </li>
               <li>
                 <a href="#contact" className="hover:text-white transition-colors">
-                  Contact & Collaborate
+                  04. Contact
                 </a>
               </li>
             </ul>

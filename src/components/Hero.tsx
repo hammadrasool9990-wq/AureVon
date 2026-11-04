@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
             <div className="flex items-center gap-2 text-sm font-medium text-blue-400 mb-4 tracking-wide">
               <span>Personal Brand & Portfolio</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span className="text-slate-400">HAMMADRASOOL.com</span>
+              <span className="text-slate-400">HAMMAD RASOOL</span>
             </div>
 
             {/* Headline */}

@@ -21,10 +21,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenVercelGuide, onOpenInquiri
 
   const navLinks = [
     { label: 'Home', href: '#home' },
-    { label: 'My Journey', href: '#about' },
+    { label: 'About', href: '#about' },
     { label: 'Skills & Focus', href: '#skills' },
-    { label: 'Learning Hub', href: '#learning' },
-    { label: 'Campaign Simulator', href: '#calculator' },
     { label: 'Contact', href: '#contact' },
   ];
 

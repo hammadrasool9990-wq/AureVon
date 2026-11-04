@@ -23,7 +23,7 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
       title: 'Push Code to GitHub',
       detail:
         'Create a free repository on github.com (e.g. "hammadrasool-portfolio") and push your project code.',
-      command: 'git init\ngit add .\ngit commit -m "Launch HAMMADRASOOL.com"\ngit branch -M main\ngit remote add origin https://github.com/<your-username>/hammadrasool-portfolio.git\ngit push -u origin main',
+      command: 'git init\ngit add .\ngit commit -m "Launch HAMMAD RASOOL Website"\ngit branch -M main\ngit remote add origin https://github.com/<your-username>/hammadrasool-portfolio.git\ngit push -u origin main',
     },
     {
       number: '02',
@@ -41,9 +41,9 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
     },
     {
       number: '04',
-      title: 'Attach Custom Domain: HAMMADRASOOL.com',
+      title: 'Attach Custom Domain (Optional)',
       detail:
-        'In your Vercel project dashboard, go to Settings -> Domains -> enter "hammadrasool.com".',
+        'In your Vercel project dashboard, go to Settings -> Domains if you wish to attach your own custom branded domain.',
       command: null,
     },
     {
@@ -72,7 +72,7 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
                 Beginner Deployment Manual
               </div>
               <h3 className="text-xl font-bold text-white">
-                How to Deploy HAMMADRASOOL.com to Vercel
+                How to Deploy HAMMAD RASOOL to Vercel
               </h3>
             </div>
           </div>
@@ -167,7 +167,7 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
             <div>
               <strong className="text-white block mb-0.5">Free Automatic SSL & Global CDN:</strong>
               Vercel automatically provisions a free SSL certificate (HTTPS padlock) for
-              HAMMADRASOOL.com and serves the site via worldwide edge servers for sub-second loading
+              your website and serves the site via worldwide edge servers for sub-second loading
               speeds.
             </div>
           </div>

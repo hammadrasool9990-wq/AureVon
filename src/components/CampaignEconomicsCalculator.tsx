@@ -41,7 +41,11 @@ const PRESETS: Preset[] = [
   },
 ];
 
-export const CampaignEconomicsCalculator: React.FC = () => {
+interface CampaignEconomicsCalculatorProps {
+  asSubSection?: boolean;
+}
+
+export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorProps> = ({ asSubSection = false }) => {
   const [adSpend, setAdSpend] = useState<number>(2500);
   const [impressions, setImpressions] = useState<number>(125000);
   const [ctr, setCtr] = useState<number>(2.4);
@@ -76,10 +80,10 @@ export const CampaignEconomicsCalculator: React.FC = () => {
     loadPreset(PRESETS[0]);
   };
 
-  return (
-    <section id="calculator" className="py-24 bg-[#0B1220] border-t border-slate-900 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+  const content = (
+    <div>
+      {/* Section Header */}
+      {!asSubSection && (
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
             <span>Interactive Learning Sandbox</span>
@@ -95,6 +99,7 @@ export const CampaignEconomicsCalculator: React.FC = () => {
             Conversion Rate impact ROAS and bottom-line profit.
           </p>
         </div>
+      )}
 
         {/* Presets Bar */}
         <div className="mb-8 flex flex-wrap items-center gap-3">
@@ -339,6 +344,17 @@ export const CampaignEconomicsCalculator: React.FC = () => {
             </div>
           </div>
         </div>
+    </div>
+  );
+
+  if (asSubSection) {
+    return content;
+  }
+
+  return (
+    <section id="calculator" className="py-24 bg-[#0B1220] border-t border-slate-900 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {content}
       </div>
     </section>
   );

@@ -1,6 +1,19 @@
 import React from 'react';
-import { Compass, Sparkles, Building2, Terminal, Target, ArrowRight } from 'lucide-react';
+import {
+  Compass,
+  Building2,
+  Terminal,
+  Target,
+  ArrowRight,
+  GraduationCap,
+  MapPin,
+  Check,
+  BookOpen,
+} from 'lucide-react';
 import workspaceImg from '../assets/images/digital_marketing_workspace_1793684264801.jpg';
+import arfaImg from '../assets/images/arfa_technology_park_1793684263737.jpg';
+import nexskillImg from '../assets/images/nexskill_learning_hub_1793684265145.jpg';
+import { LEARNING_JOURNEY_STAGES } from '../data/portfolioData';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -9,22 +22,22 @@ export const AboutSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
-            <span>Authentic Storytelling</span>
+            <span>Page 02 · Authentic Storytelling</span>
             <span aria-hidden="true">·</span>
             <span>Zero Exaggeration</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            My Journey
+            About My Journey & Education
           </h2>
           <p className="text-lg text-slate-300 leading-relaxed">
             I believe that true professional confidence comes from honesty, disciplined study, and
             genuine curiosity. Here is who I am, what drives my work, and how I am building my
-            capabilities.
+            capabilities under experienced mentorship.
           </p>
         </div>
 
-        {/* Top Grid: Narrative & Visual Workspace */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-20">
+        {/* Narrative & Workspace Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-16">
           {/* Left Narrative */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
             <div className="p-8 rounded-2xl bg-[#0F172A] border border-slate-800">
@@ -89,79 +102,151 @@ export const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Structured 4-Pillar Journey Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {/* Card 1 */}
-          <div className="p-6 rounded-xl bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between">
+        {/* 3 Core Institutional Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {/* Card 1: Platform */}
+          <div className="p-7 rounded-2xl bg-[#0F172A] border border-slate-800 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
-                <Compass className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
+                <GraduationCap className="w-6 h-6" />
               </div>
-              <div className="text-xs font-semibold text-blue-400 mb-1">Pillar 01</div>
-              <h4 className="text-lg font-bold text-white mb-2.5">NeXskill Mentorship</h4>
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
+                Learning Platform
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                NeXskill – Be Productive
+              </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Learning professional marketing at <span className="text-white font-medium">NeXskill – Be Productive</span>{' '}
-                under the direct guidance of <span className="text-white font-medium">Sir Ahmad Basit</span>, focusing on
-                practical methodologies and real-world strategy.
+                Practical marketing education focusing on structured campaigns, conversion strategies,
+                and modern performance marketing principles.
               </p>
             </div>
-            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-slate-400">
-              Mentor: Sir Ahmad Basit
+            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-blue-400 font-medium">
+              Professional Marketing Education
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="p-6 rounded-xl bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between">
+          {/* Card 2: Mentor */}
+          <div className="p-7 rounded-2xl bg-[#0F172A] border border-blue-900/40 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-600/5 rounded-full blur-xl pointer-events-none" />
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
-                <Building2 className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
+                <Compass className="w-6 h-6" />
               </div>
-              <div className="text-xs font-semibold text-blue-400 mb-1">Pillar 02</div>
-              <h4 className="text-lg font-bold text-white mb-2.5">Arfa Kareem Tower</h4>
+              <div className="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">
+                Teacher & Mentor
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Sir Ahmad Basit
+              </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Studying inside Arfa Software Technology Park, Lahore. Immersed in an ecosystem
-                surrounded by technology founders, engineers, and digital innovators.
+                Learning under the direct mentorship of Sir Ahmad Basit. His focus on strategic
+                discipline, conversion tracking, and ethical transparency guides my growth.
               </p>
             </div>
-            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-slate-400">
-              Location: Lahore, Pakistan
+            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-blue-400 font-medium">
+              Mentorship & Strategy Guidance
             </div>
           </div>
 
-          {/* Card 3 */}
-          <div className="p-6 rounded-xl bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between">
+          {/* Card 3: Location */}
+          <div className="p-7 rounded-2xl bg-[#0F172A] border border-slate-800 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
-                <Terminal className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
+                <Building2 className="w-6 h-6" />
               </div>
-              <div className="text-xs font-semibold text-blue-400 mb-1">Pillar 03</div>
-              <h4 className="text-lg font-bold text-white mb-2.5">Web Development Synergy</h4>
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
+                Learning Ecosystem
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">
+                Arfa Software Tech Park
+              </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Combining modern web coding skills with marketing knowledge. A marketer who can build
-                and refine the web experience can execute faster and eliminate funnel bottlenecks.
+                Classes at Arfa Kareem Tower, Lahore. Immersed in Pakistan's iconic IT infrastructure
+                housing tech enterprises, software developers, and startup founders.
               </p>
             </div>
-            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-slate-400">
-              Tech: React, TypeScript, Tailwind
+            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-blue-400 font-medium">
+              Lahore, Pakistan
+            </div>
+          </div>
+        </div>
+
+        {/* Visual Dual Photo Strip */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-lg">
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <img
+                src={arfaImg}
+                alt="Arfa Software Technology Park, Lahore"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-black/30 to-transparent" />
+              <div className="absolute bottom-3 left-4 right-4">
+                <div className="flex items-center gap-1.5 text-xs text-blue-400 font-semibold mb-0.5">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Arfa Kareem Tower</span>
+                </div>
+                <div className="text-white font-bold text-base">Arfa Software Technology Park</div>
+              </div>
             </div>
           </div>
 
-          {/* Card 4 */}
-          <div className="p-6 rounded-xl bg-[#0B1220] border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between">
-            <div>
-              <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-5">
-                <Target className="w-5 h-5" />
+          <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-lg">
+            <div className="relative aspect-[16/9] overflow-hidden">
+              <img
+                src={nexskillImg}
+                alt="NeXskill Learning Academy Classroom"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220] via-black/30 to-transparent" />
+              <div className="absolute bottom-3 left-4 right-4">
+                <div className="flex items-center gap-1.5 text-xs text-blue-400 font-semibold mb-0.5">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>NeXskill Academy</span>
+                </div>
+                <div className="text-white font-bold text-base">Collaborative Classroom Atmosphere</div>
               </div>
-              <div className="text-xs font-semibold text-blue-400 mb-1">Pillar 04</div>
-              <h4 className="text-lg font-bold text-white mb-2.5">Future Direction</h4>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                Evolving into a trusted performance marketer and digital growth collaborator who helps
-                enterprises and startups scale sustainably with clear ROI and ethical transparency.
-              </p>
             </div>
-            <div className="pt-4 mt-6 border-t border-slate-800/80 text-xs text-slate-400">
-              Focus: Sustainable Business Growth
-            </div>
+          </div>
+        </div>
+
+        {/* Structured Milestone Progress */}
+        <div className="space-y-4 mb-14">
+          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <span>Milestones in Progress</span>
+            <span className="text-xs font-normal text-slate-400">· Transparent Learning Path</span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {LEARNING_JOURNEY_STAGES.map((stage, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-xl bg-[#0F172A] border border-slate-800/80 hover:border-slate-700 transition-colors flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-xs font-mono font-semibold text-blue-400 uppercase tracking-wider">
+                      Phase 0{idx + 1} · {stage.step}
+                    </span>
+                    <span className="text-[11px] text-slate-500">{stage.location}</span>
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2">{stage.title}</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-4">{stage.description}</p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800/80 space-y-1.5">
+                  {stage.keyTakeaways.slice(0, 2).map((takeaway, tIdx) => (
+                    <div key={tIdx} className="flex items-start gap-1.5 text-xs text-slate-300">
+                      <Check className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
+                      <span>{takeaway}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
