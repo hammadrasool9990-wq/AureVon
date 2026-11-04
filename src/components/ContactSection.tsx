@@ -160,7 +160,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
   const mailtoBody = encodeURIComponent(
     `Hello Hammad,\n\nI visited your website and would like to connect.\n\nMy Contact Details:\n- Name: ${formData.fullName}\n- Email: ${formData.email}\n- Contact Number: ${formData.phone}\n${formData.message ? `- Note: ${formData.message}\n` : ''}\nBest regards,\n${formData.fullName}`
   );
-  const mailtoUrl = `mailto:hammadrasool9990@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+  const mailtoUrl = `mailto:AureVon9990@gmail.com?cc=hammadrasool9990@gmail.com&subject=${mailtoSubject}&body=${mailtoBody}`;
 
   return (
     <section id="contact" className="py-24 bg-slate-950/80 border-t border-slate-900 relative">
@@ -184,6 +184,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
 
               {/* Direct channels */}
               <div className="space-y-4 mb-8">
+                {/* Primary Email */}
+                <a
+                  href="mailto:AureVon9990@gmail.com"
+                  className="p-4 rounded-xl bg-[#0F172A] border border-blue-900/40 hover:border-blue-500/50 transition-colors flex items-center gap-4 group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:text-blue-300">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-blue-400 font-medium">Primary Email</div>
+                    <div className="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                      AureVon9990@gmail.com
+                    </div>
+                  </div>
+                </a>
+
+                {/* Direct Personal Email */}
                 <a
                   href="mailto:hammadrasool9990@gmail.com"
                   className="p-4 rounded-xl bg-[#0F172A] border border-slate-800 hover:border-blue-500/50 transition-colors flex items-center gap-4 group"
@@ -468,8 +485,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   <p className="text-[11px] text-slate-500 text-center leading-normal">
                     You can also email directly to{' '}
                     <a
+                      href="mailto:AureVon9990@gmail.com"
+                      className="text-blue-400 hover:underline font-medium"
+                    >
+                      AureVon9990@gmail.com
+                    </a>{' '}
+                    or{' '}
+                    <a
                       href="mailto:hammadrasool9990@gmail.com"
-                      className="text-blue-400 hover:underline"
+                      className="text-blue-400 hover:underline font-medium"
                     >
                       hammadrasool9990@gmail.com
                     </a>

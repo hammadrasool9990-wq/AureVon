@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, GraduationCap, Compass } from 'lucide-react';
+import { ArrowRight, MapPin, GraduationCap, Compass, Mail } from 'lucide-react';
 import portraitImg from '../assets/images/hammad_rasool_actual.jpeg';
 
 export const Hero: React.FC = () => {
@@ -22,10 +22,22 @@ export const Hero: React.FC = () => {
               <span className="text-slate-400">HAMMAD RASOOL</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-6">
-              Hello, I'm <span className="text-blue-500">Hammad Rasool</span>.
-            </h1>
+            {/* Headline with Email */}
+            <div className="mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12] mb-3">
+                Hello, I'm <span className="text-blue-500">Hammad Rasool</span>.
+              </h1>
+              <a
+                href="mailto:AureVon9990@gmail.com"
+                className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-slate-300 hover:text-blue-400 transition-colors group"
+                title="Send email to Hammad Rasool"
+              >
+                <Mail className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
+                <span className="text-blue-400 font-semibold underline decoration-blue-500/40 underline-offset-4">
+                  AureVon9990@gmail.com
+                </span>
+              </a>
+            </div>
 
             {/* Tagline */}
             <p className="text-xl sm:text-2xl font-semibold text-slate-200 mb-6 leading-snug">
@@ -105,8 +117,15 @@ export const Hero: React.FC = () => {
                     <div className="text-xs text-blue-400 font-medium mt-0.5">
                       Digital Marketing Learner & Web Developer
                     </div>
+                    <a
+                      href="mailto:AureVon9990@gmail.com"
+                      className="text-xs text-slate-300 hover:text-blue-400 flex items-center gap-1.5 mt-1.5 transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-blue-400" />
+                      <span>AureVon9990@gmail.com</span>
+                    </a>
                   </div>
-                  <div className="text-right text-[11px] text-slate-400 hidden sm:block">
+                  <div className="text-right text-[11px] text-slate-400 hidden sm:block self-start pt-1">
                     <div className="text-slate-300 font-medium">Gulberg</div>
                     <div className="text-slate-500">Lahore, Pakistan</div>
                   </div>

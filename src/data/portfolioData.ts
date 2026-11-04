@@ -7,7 +7,8 @@ export const PERSONAL_INFO = {
   roles: ['Digital Marketing Learner', 'Aspiring Professional Marketer', 'Web Developer'],
   summary:
     "I'm Hammad Rasool, an aspiring digital marketing professional and web developer. I am developing my skills in professional marketing through NeXskill under the mentorship of Sir Ahmad Basit. I am passionate about understanding how businesses grow, connect with customers, and build their digital presence.",
-  email: 'hammadrasool9990@gmail.com',
+  email: 'AureVon9990@gmail.com',
+  personalEmail: 'hammadrasool9990@gmail.com',
   educationPlatform: 'NeXskill – Be Productive',
   mentor: 'Sir Ahmad Basit',
   location: 'Gulberg, Lahore, Pakistan',

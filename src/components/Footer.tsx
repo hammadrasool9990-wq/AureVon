@@ -34,17 +34,24 @@ export const Footer: React.FC<FooterProps> = ({
               learner, aspiring professional marketer, and web developer mentored at NeXskill in Arfa
               Software Technology Park, Lahore.
             </p>
-            <div className="pt-2 flex items-center gap-4 text-slate-400">
+            <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-4 text-slate-400">
               <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-blue-400" />
+                <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                 <span>Gulberg, Lahore, Pakistan</span>
               </span>
-              <span aria-hidden="true" className="text-slate-700">·</span>
+              <span aria-hidden="true" className="text-slate-700 hidden sm:inline">·</span>
+              <a
+                href="mailto:AureVon9990@gmail.com"
+                className="hover:text-blue-400 transition-colors flex items-center gap-1.5 text-blue-400 font-medium"
+              >
+                <Mail className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                <span>AureVon9990@gmail.com</span>
+              </a>
+              <span aria-hidden="true" className="text-slate-700 hidden sm:inline">·</span>
               <a
                 href="mailto:hammadrasool9990@gmail.com"
                 className="hover:text-blue-400 transition-colors flex items-center gap-1.5"
               >
-                <Mail className="w-3.5 h-3.5 text-blue-400" />
                 <span>hammadrasool9990@gmail.com</span>
               </a>
             </div>
