@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
   educationPlatform: 'NeXskill – Be Productive',
   mentor: 'Sir Ahmad Basit',
   location: 'Gulberg, Lahore, Pakistan',
-  website: 'https://hammadrasool.com',
+  website: 'https://aurevondev.vercel.app',
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [

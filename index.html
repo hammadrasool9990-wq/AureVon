@@ -4,6 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="yg92kyRLdx3XxZRGgAN9cpInZdLN0SU3UmNyweG7fSY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var nativeFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          var currentFetch = nativeFetch;
+          function defineFetch(target) {
+            if (!target) return;
+            try {
+              Object.defineProperty(target, 'fetch', {
+                get: function() {
+                  return currentFetch;
+                },
+                set: function(val) {
+                  currentFetch = val;
+                },
+                configurable: true,
+                enumerable: true,
+              });
+            } catch (_) {}
+          }
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            defineFetch(Window.prototype);
+          }
+          if (typeof window !== 'undefined') {
+            defineFetch(window);
+          }
+        } catch (_) {}
+      })();
+    </script>
     <title>Hammad Rasool — Digital Marketing Learner & Web Developer</title>
     <meta
       name="description"
@@ -11,10 +40,11 @@
     />
     <meta name="author" content="Hammad Rasool" />
     <meta name="keywords" content="Hammad Rasool, Hammad Rasool Digital Marketing, Hammad Rasool Web Developer, Digital Marketing Learner, Performance Marketing, Professional Digital Marketing, NeXskill Lahore, Sir Ahmad Basit, Gulberg Lahore, Pakistan" />
+    <link rel="canonical" href="https://aurevondev.vercel.app/" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hammadrasool.com" />
+    <meta property="og:url" content="https://aurevondev.vercel.app/" />
     <meta property="og:title" content="Hammad Rasool — Digital Marketing Learner & Web Developer" />
     <meta
       property="og:description"
@@ -46,11 +76,11 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://hammadrasool.com/#person",
+          "@id": "https://aurevondev.vercel.app/#person",
           "name": "Hammad Rasool",
           "jobTitle": "Digital Marketing Learner & Web Developer",
           "description": "Aspiring digital marketing professional and web developer based in Gulberg, Lahore, learning under Sir Ahmad Basit at NeXskill.",
-          "url": "https://hammadrasool.com",
+          "url": "https://aurevondev.vercel.app",
           "email": "hammadrasool9990@gmail.com",
           "homeLocation": {
             "@type": "Place",
@@ -87,12 +117,12 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://hammadrasool.com/#website",
-          "url": "https://hammadrasool.com",
+          "@id": "https://aurevondev.vercel.app/#website",
+          "url": "https://aurevondev.vercel.app",
           "name": "Hammad Rasool Official Website",
           "description": "Professional personal brand website of Hammad Rasool",
           "publisher": {
-            "@id": "https://hammadrasool.com/#person"
+            "@id": "https://aurevondev.vercel.app/#person"
           }
         }
       ]
@@ -104,4 +134,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
