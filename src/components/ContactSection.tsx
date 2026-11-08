@@ -96,43 +96,72 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
     };
 
     try {
-      // 1. Try sending to backend API if available
-      let backendSuccess = false;
+      // 1. Dispatch details directly to aurevon9990@gmail.com via FormSubmit AJAX service
+      let emailDelivered = false;
+      let serviceMessage = '';
+
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://formsubmit.co/ajax/aurevon9990@gmail.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(submissionRecord),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message || 'No additional note provided.',
+            _subject: `New Portfolio Lead: ${formData.fullName} (${formData.phone})`,
+            _replyto: formData.email,
+            _template: 'table',
+            _captcha: 'false',
+          }),
         });
+
         if (response.ok) {
-          backendSuccess = true;
+          const resJson = await response.json().catch(() => null);
+          emailDelivered = true;
+          if (resJson && typeof resJson.message === 'string') {
+            serviceMessage = resJson.message;
+          }
         }
-      } catch {
-        backendSuccess = false;
+      } catch (dispatchErr) {
+        console.warn('Direct FormSubmit dispatch notice:', dispatchErr);
       }
 
-      // 2. Persist to browser LocalStorage for reliable local records
-      const existing = localStorage.getItem('hr_contact_submissions');
-      const list: ContactSubmission[] = existing ? JSON.parse(existing) : [];
-      list.unshift(submissionRecord);
-      localStorage.setItem('hr_contact_submissions', JSON.stringify(list));
+      // 2. Persist to browser LocalStorage for instant inquiries drawer backup
+      try {
+        const existing = localStorage.getItem('hr_contact_submissions');
+        const list: ContactSubmission[] = existing ? JSON.parse(existing) : [];
+        list.unshift(submissionRecord);
+        localStorage.setItem('hr_contact_submissions', JSON.stringify(list));
+      } catch {
+        // Ignore localStorage quota errors if any
+      }
 
       // 3. Mark success state
       setSubmissionSuccess(submissionRecord);
       onSubmissionSuccess();
 
-      if (backendSuccess) {
-        setSubmissionNotice('Message recorded securely to backend & local inquiries.');
+      if (emailDelivered) {
+        if (serviceMessage.toLowerCase().includes('activation')) {
+          setSubmissionNotice(
+            'Inquiry dispatched! FormSubmit sent a 1-click activation to aurevon9990@gmail.com to enable instant forwarding.'
+          );
+        } else {
+          setSubmissionNotice('Dispatched directly to aurevon9990@gmail.com.');
+        }
       } else {
         setSubmissionNotice(
-          'Contact request saved! You can also click below to open your mail client directly.'
+          'Inquiry captured! A direct email to aurevon9990@gmail.com is also prepared below.'
         );
       }
     } catch (err) {
       console.error('Submission error:', err);
       setErrors((prev) => ({
         ...prev,
-        phone: 'Technical issue saving inquiry. Please use direct email or phone below.',
+        phone: 'Technical issue submitting inquiry. Please use direct email or phone below.',
       }));
     } finally {
       setIsSubmitting(false);
@@ -262,14 +291,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   </div>
 
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-cyan-700 mb-1">
-                      Message Received
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-[11px] font-bold uppercase tracking-wider mb-2">
+                      <Mail className="w-3.5 h-3.5 text-cyan-600" />
+                      <span>Delivered to aurevon9990@gmail.com</span>
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-2">
                       Thank You, {submissionSuccess.fullName}!
                     </h3>
                     <p className="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                      I have received your contact details. I will reach out to you directly at{' '}
+                      Your details have been submitted and dispatched to <strong className="text-cyan-700 font-mono">aurevon9990@gmail.com</strong>. I will get in touch with you directly at{' '}
                       <span className="text-cyan-700 font-bold font-mono">{submissionSuccess.phone}</span>{' '}
                       or <span className="text-cyan-700 font-bold font-mono">{submissionSuccess.email}</span>.
                     </p>
@@ -278,8 +308,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   {/* Submission Summary Card */}
                   <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 text-left text-xs space-y-2.5 max-w-lg mx-auto">
                     <div className="flex justify-between items-center pb-2 border-b border-slate-200">
+                      <span className="text-slate-500">Destination:</span>
+                      <span className="font-mono text-cyan-700 font-bold">aurevon9990@gmail.com</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-slate-200">
                       <span className="text-slate-500">Reference ID:</span>
-                      <span className="font-mono text-cyan-700 font-bold">{submissionSuccess.id}</span>
+                      <span className="font-mono text-slate-700 font-bold">{submissionSuccess.id}</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-500">Full Name:</span>
@@ -321,7 +355,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                   </div>
 
                   {submissionNotice && (
-                    <div className="text-[11px] text-slate-500 font-mono pt-2">
+                    <div className="text-[11px] text-cyan-700 bg-cyan-50 p-2.5 rounded-lg border border-cyan-200 font-mono pt-2">
                       {submissionNotice}
                     </div>
                   )}
@@ -341,11 +375,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                     aria-hidden="true"
                   />
 
-                  {/* Quick Notice */}
-                  <div className="p-3.5 rounded-xl bg-cyan-50/80 border border-cyan-200 flex items-center gap-3 text-xs text-cyan-800">
-                    <Phone className="w-4 h-4 text-cyan-600 shrink-0" />
+                  {/* Direct Delivery Notice */}
+                  <div className="p-3.5 rounded-xl bg-cyan-50/80 border border-cyan-200 flex items-center gap-3 text-xs text-cyan-900">
+                    <Mail className="w-4 h-4 text-cyan-600 shrink-0" />
                     <span>
-                      Quick connect: simply provide your <strong className="text-slate-900">Name</strong>, <strong className="text-slate-900">Email</strong>, and <strong className="text-cyan-800">Contact Number</strong>.
+                      Direct Inbox Delivery: Information shared here is sent directly to{' '}
+                      <strong className="text-cyan-950 font-mono underline decoration-cyan-400">aurevon9990@gmail.com</strong>.
                     </span>
                   </div>
 
@@ -470,15 +505,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSubmissionSucc
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          <span>Submitting Request...</span>
+                          <span>Delivering to aurevon9990@gmail.com...</span>
                         </>
                       ) : (
                         <>
-                          <span>Send Contact Request</span>
+                          <span>Send Details to aurevon9990@gmail.com</span>
                           <Send className="w-4 h-4 text-cyan-100" />
                         </>
                       )}
                     </button>
+                    <p className="text-[11px] text-slate-500 text-center mt-2 flex items-center justify-center gap-1.5">
+                      <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
+                      <span>Instant email notification with your contact details delivered to Hammad Rasool</span>
+                    </p>
                   </div>
 
                   {/* Direct Contact Alternative Note */}
