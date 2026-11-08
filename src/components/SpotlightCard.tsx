@@ -9,7 +9,7 @@ interface SpotlightCardProps {
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
-  spotlightColor = 'rgba(245, 158, 11, 0.16)',
+  spotlightColor = 'rgba(6, 182, 212, 0.14)',
 }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
@@ -29,7 +29,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden transition-all duration-300 ${className}`}
     >
-      {/* Dynamic Cursor Spotlight Layer */}
+      {/* Dynamic Cursor Spotlight Layer in Aqua */}
       <div
         className="pointer-events-none absolute -inset-px z-10 transition-opacity duration-300"
         style={{

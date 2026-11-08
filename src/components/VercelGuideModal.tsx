@@ -59,19 +59,19 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
-      <div className="relative w-full max-w-3xl bg-[#0E0E12] border border-neutral-800 rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-3xl bg-white border border-slate-200 rounded-2xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
         {/* Modal Header */}
-        <div className="p-6 border-b border-neutral-800 flex items-center justify-between">
+        <div className="p-6 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400">
+            <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600">
               <Globe className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <div className="text-xs font-bold uppercase tracking-wider text-cyan-700">
                 Beginner Deployment Manual
               </div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-slate-900">
                 How to Deploy HAMMAD RASOOL to Vercel
               </h3>
             </div>
@@ -79,16 +79,16 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
           <button
             type="button"
             onClick={onClose}
-            className="p-2 text-neutral-400 hover:text-white rounded-lg hover:bg-neutral-800 transition-colors"
+            className="p-2 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content body */}
-        <div className="p-6 overflow-y-auto space-y-6 flex-1 text-sm text-neutral-300">
-          <p className="text-sm text-neutral-300 leading-relaxed bg-black p-4 rounded-xl border border-neutral-800">
-            Deploying this website to <strong className="text-white">Vercel</strong> is 100% free,
+        <div className="p-6 overflow-y-auto space-y-6 flex-1 text-sm text-slate-600 bg-white">
+          <p className="text-sm text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-200">
+            Deploying this website to <strong className="text-slate-900 font-bold">Vercel</strong> is 100% free,
             takes less than 3 minutes, and requires no server administration. Follow these 5 simple
             steps:
           </p>
@@ -97,33 +97,33 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
             {steps.map((s) => (
               <div
                 key={s.number}
-                className="p-5 rounded-xl bg-black border border-neutral-800 space-y-3"
+                className="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3"
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-xs font-bold text-amber-400 bg-neutral-900 px-2 py-0.5 rounded border border-amber-500/30">
+                  <span className="font-mono text-xs font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">
                     Step {s.number}
                   </span>
-                  <h4 className="text-base font-bold text-white">{s.title}</h4>
+                  <h4 className="text-base font-bold text-slate-900">{s.title}</h4>
                 </div>
 
-                <p className="text-xs text-neutral-300 leading-relaxed whitespace-pre-line">
+                <p className="text-xs text-slate-600 leading-relaxed whitespace-pre-line">
                   {s.detail}
                 </p>
 
                 {s.command && (
                   <div className="relative">
-                    <pre className="p-3 rounded-lg bg-[#141418] text-[11px] font-mono text-neutral-200 overflow-x-auto border border-neutral-800">
+                    <pre className="p-3 rounded-lg bg-slate-900 text-[11px] font-mono text-cyan-300 overflow-x-auto border border-slate-800">
                       {s.command}
                     </pre>
                     <button
                       type="button"
                       onClick={() => copyToClipboard(s.command, s.number)}
-                      className="absolute top-2 right-2 px-2 py-1 text-[10px] text-neutral-400 hover:text-white bg-neutral-900 rounded flex items-center gap-1 border border-neutral-700"
+                      className="absolute top-2 right-2 px-2 py-1 text-[10px] text-slate-400 hover:text-white bg-slate-800 rounded flex items-center gap-1 border border-slate-700"
                     >
                       {copiedText === s.number ? (
                         <>
-                          <Check className="w-3 h-3 text-amber-400" />
-                          <span className="text-amber-400">Copied</span>
+                          <Check className="w-3 h-3 text-cyan-400" />
+                          <span className="text-cyan-400">Copied</span>
                         </>
                       ) : (
                         <>
@@ -137,20 +137,20 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
 
                 {s.dnsRecords && (
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs text-left border border-neutral-800 rounded-lg">
-                      <thead className="bg-[#141418] text-neutral-400 font-semibold border-b border-neutral-800">
+                    <table className="w-full text-xs text-left border border-slate-200 rounded-lg">
+                      <thead className="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
                         <tr>
                           <th className="px-3 py-2">Type</th>
                           <th className="px-3 py-2">Host / Name</th>
                           <th className="px-3 py-2">Target / Value</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-neutral-800 font-mono">
+                      <tbody className="divide-y divide-slate-200 font-mono">
                         {s.dnsRecords.map((dns, idx) => (
-                          <tr key={idx} className="bg-black">
-                            <td className="px-3 py-2 text-amber-400 font-bold">{dns.type}</td>
-                            <td className="px-3 py-2 text-neutral-200">{dns.name}</td>
-                            <td className="px-3 py-2 text-amber-300">{dns.value}</td>
+                          <tr key={idx} className="bg-white">
+                            <td className="px-3 py-2 text-cyan-700 font-bold">{dns.type}</td>
+                            <td className="px-3 py-2 text-slate-700">{dns.name}</td>
+                            <td className="px-3 py-2 text-teal-600 font-bold">{dns.value}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -162,10 +162,10 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
           </div>
 
           {/* Value note */}
-          <div className="p-4 rounded-xl bg-amber-950/20 border border-amber-900/40 flex items-start gap-3 text-xs text-neutral-300">
-            <Shield className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 flex items-start gap-3 text-xs text-cyan-900">
+            <Shield className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
             <div>
-              <strong className="text-white block mb-0.5">Free Automatic SSL & Global CDN:</strong>
+              <strong className="text-slate-900 block mb-0.5 font-bold">Free Automatic SSL & Global CDN:</strong>
               Vercel automatically provisions a free SSL certificate (HTTPS padlock) for
               your website and serves the site via worldwide edge servers for sub-second loading
               speeds.
@@ -174,12 +174,12 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
         </div>
 
         {/* Modal Footer */}
-        <div className="p-4 bg-black border-t border-neutral-800 flex items-center justify-between">
+        <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
           <a
             href="https://vercel.com"
             target="_blank"
             rel="noreferrer"
-            className="text-xs text-amber-400 hover:underline flex items-center gap-1 font-medium"
+            className="text-xs text-cyan-700 hover:text-cyan-800 hover:underline flex items-center gap-1 font-bold"
           >
             <span>Visit vercel.com</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -187,7 +187,7 @@ export const VercelGuideModal: React.FC<VercelGuideModalProps> = ({ isOpen, onCl
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-md"
+            className="px-5 py-2 text-xs font-bold text-white bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 rounded-lg transition-colors shadow-md"
           >
             Got It, Thanks!
           </button>

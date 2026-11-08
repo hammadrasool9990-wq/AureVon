@@ -2,21 +2,15 @@
 
 @theme {
   --font-sans: 'Candara', 'Candara Light', 'Calibri', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  --color-brand-red: #DC2626;
-  --color-brand-red-hover: #B91C1C;
-  --color-brand-red-light: #EF4444;
-  --color-brand-gold: #F59E0B;
-  --color-brand-gold-hover: #D97706;
-  --color-brand-gold-light: #FBBF24;
-  --color-black-pure: #000000;
-  --color-black-canvas: #08080A;
-  --color-black-surface: #101014;
-  --color-black-card: #15151A;
-  --color-black-border: #24242C;
+  --color-brand-aqua: #06B6D4;
+  --color-brand-aqua-dark: #0891B2;
+  --color-brand-aqua-deep: #0E7490;
+  --color-brand-aqua-light: #22D3EE;
+  --color-brand-aqua-tint: #ECFEFF;
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -25,53 +19,53 @@
 
 body {
   font-family: 'Candara', 'Candara Light', 'Calibri', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  background-color: #08080A;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #0F172A;
   overflow-x: hidden;
 }
 
-/* Custom subtle dark scrollbar with gold/red hover */
+/* Custom modern scrollbar with aqua hover */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08080A;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #24242C;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D97706;
+  background: #0891B2;
 }
 
-/* Advanced Luxury Keyframe Effects */
+/* Advanced Aqua Keyframe Effects */
 @keyframes float-mote {
   0%, 100% {
     transform: translateY(0px) translateX(0px);
-    opacity: 0.2;
+    opacity: 0.25;
   }
   50% {
-    transform: translateY(-16px) translateX(8px);
-    opacity: 0.6;
+    transform: translateY(-14px) translateX(6px);
+    opacity: 0.7;
   }
 }
 
-@keyframes pulse-aura {
+@keyframes aqua-pulse-aura {
   0%, 100% {
     opacity: 0.35;
     transform: scale(1);
   }
   50% {
-    opacity: 0.55;
-    transform: scale(1.04);
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }
 
-@keyframes gold-shimmer {
+@keyframes aqua-shimmer {
   0% {
     background-position: -200% 0;
   }
@@ -88,22 +82,22 @@ body {
   animation: float-mote 8s ease-in-out 3s infinite;
 }
 
-.animate-pulse-aura {
-  animation: pulse-aura 5s ease-in-out infinite;
+.animate-aqua-pulse {
+  animation: aqua-pulse-aura 5s ease-in-out infinite;
 }
 
-.text-gold-shimmer {
+.text-aqua-shimmer {
   background: linear-gradient(
     90deg,
-    #FFFFFF 0%,
-    #F59E0B 25%,
-    #FDE68A 50%,
-    #DC2626 75%,
-    #FFFFFF 100%
+    #0E7490 0%,
+    #06B6D4 25%,
+    #0284C7 50%,
+    #06B6D4 75%,
+    #0E7490 100%
   );
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: gold-shimmer 8s linear infinite;
+  animation: aqua-shimmer 8s linear infinite;
 }

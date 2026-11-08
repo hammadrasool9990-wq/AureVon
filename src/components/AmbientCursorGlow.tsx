@@ -25,11 +25,11 @@ export const AmbientCursorGlow: React.FC = () => {
       aria-hidden="true"
     >
       <div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[130px] opacity-15 transition-transform duration-150 ease-out will-change-transform"
+        className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-25 transition-transform duration-150 ease-out will-change-transform"
         style={{
-          background: 'radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(220, 38, 38, 0.2) 45%, transparent 70%)',
-          left: `${position.x - 250}px`,
-          top: `${position.y - 250}px`,
+          background: 'radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, rgba(56, 189, 248, 0.16) 40%, rgba(20, 184, 166, 0.08) 60%, transparent 75%)',
+          left: `${position.x - 260}px`,
+          top: `${position.y - 260}px`,
         }}
       />
     </div>

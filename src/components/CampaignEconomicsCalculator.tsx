@@ -85,15 +85,15 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
       {/* Section Header */}
       {!asSubSection && (
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400 mb-3">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-700 mb-3">
             <span>Interactive Learning Sandbox</span>
-            <span aria-hidden="true" className="text-neutral-600">·</span>
+            <span aria-hidden="true" className="text-slate-300">·</span>
             <span>Performance Marketing Math</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             Campaign Economics & Unit Metrics Simulator
           </h2>
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             As part of my digital marketing studies under Sir Ahmad Basit, I built this practical
             calculator to test campaign unit economics. Test how small improvements in CTR or
             Conversion Rate impact ROAS and bottom-line profit.
@@ -103,7 +103,7 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
       {/* Presets Bar */}
       <div className="mb-8 flex flex-wrap items-center gap-3">
-        <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider mr-1">
+        <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
           Load Scenario:
         </span>
         {PRESETS.map((p) => (
@@ -111,7 +111,7 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
             key={p.name}
             type="button"
             onClick={() => loadPreset(p)}
-            className="px-3.5 py-1.5 text-xs font-semibold text-neutral-300 hover:text-amber-300 bg-[#101014] hover:bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)] rounded-lg transition-all active:scale-[0.97] whitespace-nowrap cursor-pointer"
+            className="px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:text-cyan-800 bg-slate-50 hover:bg-cyan-50/70 border border-slate-200 hover:border-cyan-300 hover:shadow-sm rounded-lg transition-all active:scale-[0.97] whitespace-nowrap cursor-pointer"
           >
             {p.name}
           </button>
@@ -119,7 +119,7 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
         <button
           type="button"
           onClick={handleReset}
-          className="px-2.5 py-1.5 text-xs text-neutral-500 hover:text-amber-400 transition-colors ml-auto flex items-center gap-1 cursor-pointer"
+          className="px-2.5 py-1.5 text-xs text-slate-400 hover:text-cyan-600 transition-colors ml-auto flex items-center gap-1 cursor-pointer"
           title="Reset to initial values"
         >
           <RotateCcw className="w-3.5 h-3.5" />
@@ -130,17 +130,17 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
       {/* Main Grid: Inputs on Left, Real-Time Unit Metrics on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Panel: Sliders & Controls */}
-        <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-[#101014] border border-neutral-800 space-y-6">
-          <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-2">
-            <Calculator className="w-5 h-5 text-amber-400" />
+        <div className="lg:col-span-6 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
+          <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
+            <Calculator className="w-5 h-5 text-cyan-600" />
             <span>Campaign Inputs</span>
           </h3>
 
           {/* Ad Spend */}
           <div>
-            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-              <label htmlFor={spendInputId} className="text-neutral-300">Total Ad Spend ($)</label>
-              <span className="font-mono tabular-nums text-white font-bold">${adSpend.toLocaleString()}</span>
+            <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
+              <label htmlFor={spendInputId} className="text-slate-700">Total Ad Spend ($)</label>
+              <span className="font-mono tabular-nums text-slate-900 font-bold">${adSpend.toLocaleString()}</span>
             </div>
             <input
               id={spendInputId}
@@ -150,9 +150,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
               step="100"
               value={adSpend}
               onChange={(e) => setAdSpend(Number(e.target.value))}
-              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
             />
-            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
               <span>$200</span>
               <span>$25,000</span>
             </div>
@@ -160,9 +160,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
           {/* Impressions */}
           <div>
-            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-              <label htmlFor={impressionsInputId} className="text-neutral-300">Audience Impressions</label>
-              <span className="font-mono tabular-nums text-white font-bold">{impressions.toLocaleString()}</span>
+            <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
+              <label htmlFor={impressionsInputId} className="text-slate-700">Audience Impressions</label>
+              <span className="font-mono tabular-nums text-slate-900 font-bold">{impressions.toLocaleString()}</span>
             </div>
             <input
               id={impressionsInputId}
@@ -172,9 +172,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
               step="5000"
               value={impressions}
               onChange={(e) => setImpressions(Number(e.target.value))}
-              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
             />
-            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
               <span>5,000</span>
               <span>500,000</span>
             </div>
@@ -182,9 +182,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
           {/* Click-Through Rate (CTR) */}
           <div>
-            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-              <label htmlFor={ctrInputId} className="text-neutral-300">Click-Through Rate (CTR %)</label>
-              <span className="font-mono tabular-nums text-amber-400 font-bold">{ctr.toFixed(1)}%</span>
+            <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
+              <label htmlFor={ctrInputId} className="text-slate-700">Click-Through Rate (CTR %)</label>
+              <span className="font-mono tabular-nums text-cyan-700 font-bold">{ctr.toFixed(1)}%</span>
             </div>
             <input
               id={ctrInputId}
@@ -194,9 +194,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
               step="0.1"
               value={ctr}
               onChange={(e) => setCtr(Number(e.target.value))}
-              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
             />
-            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
               <span>0.5% (Conservative)</span>
               <span>8.0% (Exceptional)</span>
             </div>
@@ -204,9 +204,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
           {/* Conversion Rate (CVR) */}
           <div>
-            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-              <label htmlFor={cvrInputId} className="text-neutral-300">Landing Page Conversion (CVR %)</label>
-              <span className="font-mono tabular-nums text-amber-400 font-bold">{cvr.toFixed(1)}%</span>
+            <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
+              <label htmlFor={cvrInputId} className="text-slate-700">Landing Page Conversion (CVR %)</label>
+              <span className="font-mono tabular-nums text-cyan-700 font-bold">{cvr.toFixed(1)}%</span>
             </div>
             <input
               id={cvrInputId}
@@ -216,9 +216,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
               step="0.1"
               value={cvr}
               onChange={(e) => setCvr(Number(e.target.value))}
-              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
             />
-            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
               <span>0.5%</span>
               <span>12.0%</span>
             </div>
@@ -226,9 +226,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
           {/* Average Order Value / Customer Value */}
           <div>
-            <div className="flex justify-between items-center text-sm font-medium mb-1.5">
-              <label htmlFor={aovInputId} className="text-neutral-300">Average Customer Value / AOV ($)</label>
-              <span className="font-mono tabular-nums text-white font-bold">${aov.toLocaleString()}</span>
+            <div className="flex justify-between items-center text-sm font-semibold mb-1.5">
+              <label htmlFor={aovInputId} className="text-slate-700">Average Customer Value / AOV ($)</label>
+              <span className="font-mono tabular-nums text-slate-900 font-bold">${aov.toLocaleString()}</span>
             </div>
             <input
               id={aovInputId}
@@ -238,9 +238,9 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
               step="5"
               value={aov}
               onChange={(e) => setAov(Number(e.target.value))}
-              className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600"
+              className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-cyan-600"
             />
-            <div className="flex justify-between text-[11px] text-neutral-500 font-mono mt-1">
+            <div className="flex justify-between text-[11px] text-slate-400 font-mono mt-1">
               <span>$10</span>
               <span>$1,000</span>
             </div>
@@ -250,43 +250,43 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
         {/* Right Panel: Output KPI Dashboard */}
         <div className="lg:col-span-6 space-y-6">
           {/* Top Scorecard: ROAS & Net Return */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#18181F] via-[#101014] to-black border border-amber-500/35 relative overflow-hidden shadow-[0_0_35px_rgba(245,158,11,0.12)]">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-cyan-950 via-slate-900 to-slate-950 text-white border border-cyan-800 relative overflow-hidden shadow-xl shadow-cyan-950/20">
+            <div className="absolute top-0 right-0 w-44 h-44 bg-cyan-500/15 rounded-full blur-2xl pointer-events-none" />
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <span className="text-xs font-bold uppercase tracking-wider text-cyan-300">
                 Target Efficiency
               </span>
-              <span className="text-xs text-neutral-400 font-mono">Real-Time Model</span>
+              <span className="text-xs text-slate-400 font-mono">Real-Time Model</span>
             </div>
 
             <div className="grid grid-cols-2 gap-6 mb-6">
               <div>
-                <div className="text-xs text-neutral-400 mb-1">Return on Ad Spend (ROAS)</div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-amber-300 font-mono tabular-nums">
+                <div className="text-xs text-slate-400 mb-1">Return on Ad Spend (ROAS)</div>
+                <div className="text-3xl sm:text-4xl font-extrabold text-cyan-300 font-mono tabular-nums">
                   {roas.toFixed(2)}x
                 </div>
-                <div className="text-xs text-neutral-400 mt-1 font-mono">
+                <div className="text-xs text-slate-400 mt-1 font-mono">
                   {roas >= 2.0 ? 'Profitable Scale' : roas >= 1.0 ? 'Breakeven Range' : 'Underperforming'}
                 </div>
               </div>
 
               <div>
-                <div className="text-xs text-neutral-400 mb-1">Net Margin / Return</div>
+                <div className="text-xs text-slate-400 mb-1">Net Margin / Return</div>
                 <div
                   className={`text-3xl sm:text-4xl font-extrabold font-mono tabular-nums ${
-                    netContribution >= 0 ? 'text-amber-400' : 'text-red-500'
+                    netContribution >= 0 ? 'text-teal-300' : 'text-rose-400'
                   }`}
                 >
                   {netContribution >= 0 ? `+$${netContribution.toLocaleString()}` : `-$${Math.abs(netContribution).toLocaleString()}`}
                 </div>
-                <div className="text-xs text-neutral-400 mt-1 font-mono">
+                <div className="text-xs text-slate-400 mt-1 font-mono">
                   ROI: {roiPercentage.toFixed(1)}%
                 </div>
               </div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-black/80 border border-neutral-800 text-xs text-neutral-300 leading-relaxed">
-              <strong className="text-amber-300">Marketing Principle:</strong> In performance
+            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 leading-relaxed">
+              <strong className="text-cyan-300">Marketing Principle:</strong> In performance
               marketing, ad spend is only effective when unit margins cover Cost Per Acquisition
               (CPA) while maintaining positive customer lifetime value (LTV).
             </div>
@@ -294,53 +294,53 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
 
           {/* Granular Unit Metrics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
-              <div className="text-[11px] font-medium text-neutral-400 mb-1">Estimated Clicks</div>
-              <div className="text-xl font-bold text-white font-mono tabular-nums">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <div className="text-[11px] font-semibold text-slate-500 mb-1">Estimated Clicks</div>
+              <div className="text-xl font-bold text-slate-900 font-mono tabular-nums">
                 {clicks.toLocaleString()}
               </div>
-              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Traffic volume</div>
+              <div className="text-[11px] text-slate-400 mt-0.5 font-mono">Traffic volume</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
-              <div className="text-[11px] font-medium text-neutral-400 mb-1">Cost Per Click (CPC)</div>
-              <div className="text-xl font-bold text-white font-mono tabular-nums">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <div className="text-[11px] font-semibold text-slate-500 mb-1">Cost Per Click (CPC)</div>
+              <div className="text-xl font-bold text-slate-900 font-mono tabular-nums">
                 ${cpc.toFixed(2)}
               </div>
-              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Per visitor</div>
+              <div className="text-[11px] text-slate-400 mt-0.5 font-mono">Per visitor</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
-              <div className="text-[11px] font-medium text-neutral-400 mb-1">Conversions</div>
-              <div className="text-xl font-bold text-amber-400 font-mono tabular-nums">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <div className="text-[11px] font-semibold text-slate-500 mb-1">Conversions</div>
+              <div className="text-xl font-bold text-cyan-700 font-mono tabular-nums">
                 {conversions.toLocaleString()}
               </div>
-              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Leads / sales</div>
+              <div className="text-[11px] text-slate-400 mt-0.5 font-mono">Leads / sales</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#101014] border border-neutral-800">
-              <div className="text-[11px] font-medium text-neutral-400 mb-1">Cost Per Acq (CPA)</div>
-              <div className="text-xl font-bold text-white font-mono tabular-nums">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+              <div className="text-[11px] font-semibold text-slate-500 mb-1">Cost Per Acq (CPA)</div>
+              <div className="text-xl font-bold text-slate-900 font-mono tabular-nums">
                 ${cpa.toFixed(2)}
               </div>
-              <div className="text-[11px] text-neutral-500 mt-0.5 font-mono">Per acquisition</div>
+              <div className="text-[11px] text-slate-400 mt-0.5 font-mono">Per acquisition</div>
             </div>
           </div>
 
           {/* Gross Pipeline Revenue */}
-          <div className="p-5 rounded-xl bg-[#101014] border border-neutral-800 flex items-center justify-between">
+          <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
-              <div className="text-xs text-neutral-400 font-medium">Estimated Gross Pipeline / Revenue</div>
-              <div className="text-2xl font-bold text-white font-mono tabular-nums mt-0.5">
+              <div className="text-xs text-slate-500 font-semibold">Estimated Gross Pipeline / Revenue</div>
+              <div className="text-2xl font-bold text-slate-900 font-mono tabular-nums mt-0.5">
                 ${grossRevenue.toLocaleString()}
               </div>
             </div>
             <a
               href="#contact"
-              className="px-4 py-2 text-xs font-bold text-white bg-red-600 hover:bg-red-700 active:scale-[0.98] rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-md shadow-red-950/50"
+              className="px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 active:scale-[0.98] rounded-lg transition-colors inline-flex items-center gap-1.5 shadow-md shadow-cyan-600/25"
             >
               <span>Discuss Campaign Math</span>
-              <ArrowRight className="w-3.5 h-3.5 text-amber-300" />
+              <ArrowRight className="w-3.5 h-3.5 text-cyan-100" />
             </a>
           </div>
         </div>
@@ -353,7 +353,7 @@ export const CampaignEconomicsCalculator: React.FC<CampaignEconomicsCalculatorPr
   }
 
   return (
-    <section id="calculator" className="py-24 bg-[#08080A] border-t border-neutral-900 relative">
+    <section id="calculator" className="py-24 bg-white border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {content}
       </div>

@@ -35,8 +35,8 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#08080A] text-white flex flex-col font-sans selection:bg-red-600 selection:text-white relative">
-      {/* Advanced Global Visual Effects: Scroll Progress & Ambient Cursor Glow */}
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-cyan-500 selection:text-white relative">
+      {/* Advanced Global Visual Effects: Aqua Scroll Progress & Aqua Ambient Cursor Glow */}
       <ScrollProgressBar />
       <AmbientCursorGlow />
 
